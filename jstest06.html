@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JS TEST06</title>
+    </head>
+    <body>
+        <h1>JAVA SCRIPT TEST</h1>
+        <hr>
+        <script>
+            document.write("## 배열 사용 1 <br>");
+            arr1 = [10,3.5,"hello"];
+            document.write(arr1+"<br>");
+            document.write(arr1[0]+"<br>");
+            document.write(arr1[1]+"<br>");
+            document.write(arr1[2]+"<br>");
+            document.write(arr1[3]+"<br>");
+            arr1 = [20,5.5,"hi",30];
+            document.write(arr1+"<br>");
+            arr1[1] = "안녕";
+            document.write(arr1+"<br>");
+            arr1[4] = "추가1";
+            document.write(arr1+"<br>");
+            arr1[7] = "추가2";
+            document.write(arr1+"<br><hr>");
+            
+            document.write("## 배열 사용 2 <br>");
+            arr2 = new Array();
+            document.write(arr2+"<br>");
+            document.write(arr2[0]+"<br>");
+            arr2[0] = 10;
+            arr2[1] = 20;
+            document.write(arr2+"<br><hr>");
+
+            document.write("## 배열 사용 3 <br>");
+            arr3 = new Array(3);
+            document.write(arr3+"<br>");
+            document.write(arr3[0]+"<br>");
+            arr3[0] = 1;
+            arr3[1] = 2;
+            document.write(arr3+"<br><hr>");
+
+            document.write("## 배열 사용 4 <br>");
+            arr4 = new Array(5, 1.6, "HI");
+            document.write(arr4+"<br>");
+            document.write(arr4[0]+"<br>");
+            document.write(arr4[1]+"<br>");
+            document.write(arr4[2]+"<br><hr>");
+
+            document.write("## 배열 사용 5 - indexOf() <br>");
+            // indexOf() - 문자열로 검색해서 처음 나오는 위치를 반환
+            fruits = ['바나나', '딸기', '복숭아', '수박'];
+            document.write(fruits+"<br>");
+            document.write(fruits.indexOf('딸기')+"번째 위치<br><hr>");
+            
+            document.write("## 배열 사용 6 - concat() <br>");
+            // concat() - 여러 배열들을 결합할 때 사용
+            arr1 = ['사과', '딸기', '바나나'];
+            arr2 = ['복숭아', '키위', '파인애플'];
+            arr3 = [10,20,30,40];
+            data = arr1.concat(arr2,arr3);
+            document.write(data+"<br><hr>");
+
+            document.write("## 배열 사용 7 - join() <br>");
+            // join('구분자') - 배열 안에 있는 요소들을 하나의 문자열로 만들어서 반환
+            // join 함수의 구분자를 중간에 넣어서 묶어 줌
+            arr1 = ['사과', '딸기', '바나나'];
+            arr2 = ['복숭아', '키위', '파인애플'];
+            arr3 = [10,20,30,40];
+            data1 = arr1.join('-');
+            document.write(data1+"<br>");
+            data2 = arr1.concat(arr2,arr3).join('/');
+            document.write(data2+"<br><hr>");
+
+            document.write("## 배열 사용 8 - reverse() <br>");
+            // reverse() - 배열의 요소들을 반대로 만들어 줌
+            arr1 = [1,2,4,7,3,5];
+            document.write(arr1+"<br>");
+            arr1.reverse();
+            document.write(arr1+"<br><hr>");
+
+            document.write("## 배열 사용 9 - sort() <br>");
+            // sort() - 오름차순으로 정렬
+            arr1 = [1,2,4,7,3,5,"hi","abcd",10];
+            document.write(arr1+"<br>");
+            arr1.sort();
+            document.write(arr1+"<br>");
+            arr1.sort((a,b)=>a-b);  // 오름차순
+            document.write(arr1+"<br>");
+            arr1.sort((a,b)=>b-a);  // 내림차순
+            document.write(arr1+"<br><hr>");
+
+            document.write("## 배열 사용 10 - push() <br>");
+            // push('값') - 배열의 마지막에 데이터 추가
+            arr1 = ['사과', '딸기', '바나나'];
+            document.write(arr1+"<br>");
+            arr1.push('파인애플');
+            document.write(arr1+"<br><hr>");
+            
+            document.write("## 배열 사용 11 - pop() <br>");
+            // pop() - 배열의 마지막 데이터 꺼내오기
+            // 마지막 데이터를 반환하고 배열에서는 삭제
+            arr1 = ['사과', '딸기', '바나나'];
+            document.write(arr1+"<br>");
+            document.write(arr1.pop()+"<br>");
+            document.write(arr1+"<br><hr>");
+
+            document.write("## 배열 사용 12 - shift() <br>");
+            // shift() - 배열의 첫번째 데이터 꺼내오기
+            // 첫번째 데이터를 반환하고 배열에서는 삭제
+            arr1 = ['사과', '딸기', '바나나'];
+            document.write(arr1+"<br>");
+            document.write(arr1.shift()+"<br>");
+            document.write(arr1+"<br><hr>");
+
+            document.write("## 배열 사용 13 - unshift() <br>");
+            // unshift('값') - 배열의 첫번째 데이터 추가
+            arr1 = ['사과', '딸기', '바나나'];
+            document.write(arr1+"<br>");
+            arr1.unshift('파인애플');
+            document.write(arr1+"<br><hr>");
+
+            document.write("## 배열 사용 14 - slice() <br>");
+            // slice(시작인덱스[, 종료인덱스]) - 배열의 시작인덱스부터 종료인덱스 전까지 데이터 반환
+            // 종료인덱스를 생략하면 배열의 끝까지 반환
+            arr1 = ['사과', '딸기', '바나나', '파인애플', '석류', '귤', '망고'];
+            document.write(arr1+"<br>");
+            document.write(arr1.slice(2)+"<br>");
+            document.write(arr1+"<br>");
+            document.write(arr1.slice(2,4)+"<br><hr>");
+
+            document.write("## 배열 사용 15 - splice() <br>");
+            // splice(인덱스, 제거수[, 추가값])
+            arr1 = ['사과', '딸기', '바나나', '파인애플', '석류', '귤', '망고'];
+            document.write(arr1+"<br>");
+            document.write(arr1.splice(2,2)+"<br>");
+            document.write(arr1+"<br>");
+            document.write(arr1.splice(1,1,"감","참외")+"<br>");
+            document.write(arr1+"<br><hr>");
+
+            document.write("## 배열 사용 16 - toString() <br>");
+            // toString() - 배열의 내용을 문자열 형태로 반환
+            arr1 = ['사과', '딸기', '바나나', '파인애플', '석류', '귤', '망고'];
+            document.write(arr1+"<br>");
+            document.write(arr1.toString()+"<br>");
+            document.write(typeof(arr1)+"<br>");
+            document.write(typeof(arr1.toString())+"<br><hr>");
+        </script>
+    </body>
+</html>

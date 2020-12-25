@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JS TEST04</title>
+    </head>
+    <body>
+        <h1>JAVA SCRIPT TEST</h1>
+        <hr>
+        <script>
+            // if문
+            num = prompt("숫자 입력 : ");
+            if(num > 0){
+                document.write("0보다 큰 수 입력<br>");
+            }else if(num < 0){
+                document.write("0보다 작은 수 입력<br>");
+            }else{
+                document.write("0과 같은 수 입력<br>");
+            }
+            document.write(typeof(num)+"<br>");
+            // switch문
+            switch(Number(num)){
+                case 1: document.write("1 입력<br>");
+                    break;
+                case 2: document.write("2 입력<br>");
+                    break;
+                case 3: document.write("3 입력<br>");
+                    break;
+                default : document.write("기타 입력<br>");
+            }
+            // for문
+            for(i = 0; i < num; i++){
+                document.write(i+1+"번째 반복<br>");
+            }
+            // while문
+            i = 0;
+            while(i < num){
+                document.write(i+1+"번째 반복<br>");
+                i++;
+            }
+        </script>
+    </body>
+</html>

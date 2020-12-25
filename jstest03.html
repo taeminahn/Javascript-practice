@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JS TEST03</title>
+    </head>
+    <body>
+        <h1>JAVA SCRIPT TEST</h1>
+        <hr>
+        <script>
+            // 변수
+            document.write("## 변수 ##<br>")
+            var1 = 10;
+            document.write(var1+"<br>");
+            var var2 = 20;
+            document.write(var2+"<br>");
+            var3 = var1+var2;
+            document.write(var3+"<br>");
+            var1 = "Hello";
+            document.write(var1+"<br>");
+            var2 = "bye";
+            document.write(var2+"<br>");
+            // 자료형 확인
+            document.write("## 자료형 확인 ##<br>")
+            document.write("문자열1 : "+typeof("Hello")+"<br>");
+            document.write("문자열2 : "+typeof('hihi')+"<br>");
+            document.write("문자열3 : "+typeof(var1)+"<br>");
+            document.write("숫자1 : "+typeof(100)+"<br>");
+            document.write("숫자2 : "+typeof(3.5)+"<br>");
+            document.write("숫자3 : "+typeof(-200)+"<br>");
+            document.write("숫자4 : "+typeof(var3)+"<br>");
+            document.write("참/거짓1 : "+typeof(true)+"<br>");
+            document.write("참/거짓2 : "+typeof(false)+"<br>");
+            document.write("초기값이 없는 변수 : "+typeof(var4)+"<br>");
+            // 문자열
+            document.write("## 문자열 ##<br>")
+            str1 = "Hello";
+            document.write(str1.toUpperCase()+"<br>");
+            document.write(str1.toLowerCase()+"<br>");
+            document.write(str1.length+"<br>");
+            document.write(str1.indexOf('l')+"<br>");
+            document.write(str1.lastIndexOf('l')+"<br>");
+            document.write(str1.charAt(1)+"<br>");
+            document.write(str1.substring(1,4)+"<br>");
+            document.write(str1.split('')+"<br>");
+            // 숫자
+            document.write("## 숫자 ##<br>");
+            document.write(Math.abs(10)+"<br>");        // 절대값 추출
+            document.write(Math.abs(-10)+"<br>");       // 절대값 추출
+            document.write(Math.random()+"<br>");       // 랜덤값 추출(0 < random < 1)
+            document.write(Math.round(3.465)+"<br>");   // 소수점 뒤 자리 반올림
+            document.write(Math.round(3.65)+"<br>");    // 소수점 뒤 자리 반올림
+            document.write(Math.floor(3.465)+"<br>");   // 소수점 뒤 자리 버림
+            document.write(Math.floor(3.65)+"<br>");    // 소수점 뒤 자리 버림
+            document.write(Math.ceil(3.465)+"<br>");    // 소수점 뒤 자리 올림
+            document.write(Math.ceil(3.65)+"<br>");     // 소수점 뒤 자리 올림
+            // 데이터 형변환
+            document.write("## 데이터 형변환 ##<br>");
+            document.write(typeof(10)+"<br>");
+            document.write(typeof("10")+"<br>");
+            num1 = 10;
+            document.write(typeof(num1)+"<br>");
+            document.write(typeof(String(num1))+"<br>");
+            document.write(20+num1+"<br>");
+            document.write(20+String(num1)+"<br>");
+            str1 = "10";
+            document.write(typeof(str1)+"<br>");
+            document.write(typeof(Number(str1))+"<br>");
+            document.write(typeof(parseInt(str1))+"<br>");
+            document.write(typeof(parseFloat(str1))+"<br>");
+            document.write(Number(str1)+"<br>");
+            document.write(parseInt(str1)+"<br>");
+            document.write(parseFloat(str1)+"<br>");
+            document.write(20+str1+"<br>");
+            document.write(20+Number(str1)+"<br>");
+            // 삼중 등호 연산자
+            document.write("## 삼중 등호 연산자 ##<br>");
+            if(10 == "10") {
+                document.write("숫자 10과 문자열 10은 == 같습니다.<br>");
+            }else{
+                document.write("숫자 10과 문자열 10은 == 다릅니다.<br>");
+            }
+            if(10 === "10") {
+                document.write("숫자 10과 문자열 10은 === 같습니다.<br>");
+            }else{
+                document.write("숫자 10과 문자열 10은 === 다릅니다.<br>");
+            }
+            // 문자열 연결 연산자
+            document.write("## 문자열 연결 연산자 ##<br>");
+            document.write("Hello"+"환영합니다<br>");
+            name = "홍길동";
+            document.write(name+"님 환영합니다.<br>");
+        </script>
+    </body>
+</html>

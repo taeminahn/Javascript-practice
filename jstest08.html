@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JS TEST08</title>
+    </head>
+    <body>
+        <h1>JAVA SCRIPT TEST</h1>
+        <hr>
+        <button onclick="func1()">버튼1</button>
+        <hr>
+        <button id="btn2">버튼2</button>
+        <hr>
+        <div id="d1"></div>
+        <button onclick="func3()">버튼3</button>
+        <hr>
+        <div id="d2">
+            <p class="pp">사과</p>
+            <p class="pp">딸기</p>
+            <p class="pp">오렌지</p>
+        </div>
+        <button onclick="func4()">버튼4</button>
+        <div id="d3"></div>
+        <script>
+            function func1(){
+                alert('안녕하세요');
+            }
+            // window는 브라우저 창을 이야기하고, onload는 브라우저가 로딩이 완료되었을 때를 말함
+            window.onload = function func2(){
+                document.getElementById('btn2').onclick = function(){
+                    alert('반갑습니다.');
+                }
+            }
+            function func3() {
+                document.getElementById('d1').innerHTML = "<h3>자바스크립트 공부합시다</h3>";
+            }
+            function func4() {
+                var1 = prompt("좋아하는 과일을 입력하세요");
+                arr1 = document.getElementsByClassName('pp');
+                arr2 = new Array();
+                for(i = 0; i < arr1.length; i++){
+                    arr2[i] = arr1[i].innerHTML;
+                }
+                index = arr2.indexOf(var1);
+                if(index >= 0){
+                    document.getElementById('d3').innerHTML = index+1+"번째 위치에 과일이 있습니다.";
+                }else {
+                    document.getElementById('d3').innerHTML = "해당 과일이 없습니다.";
+                }
+            }
+        </script>
+    </body>
+</html>
