@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>정규표현식 연습</title>
+    </head>
+    <style>
+        .area-big {
+            height: 400px;
+            background-color: lightgray;
+            border: 1px solid black;
+        }
+        .area {
+            height: 150px;
+            background-color: lightgray;
+            border: 1px solid black;
+        }
+    </style>
+    <body>
+        <label>선택 : </label>
+        <input type="text" id="select"><br>
+        <label>입력 : </label>
+        <input type="text" id="str">
+        <button onclick="check();">유효성 검사</button>
+        <div id="area1"></div>
+        <script>
+            function check(){
+                var select = document.getElementById('select').value;
+                var str = document.getElementById('str').value;
+                var area1 = document.getElementById('area1');
+                // 정규 표현식 작성
+                // var regExp = /정규표현식/;
+                // 1. 숫자만 입력해야 할 때
+                var regExp1 = /^[0-9]+$/g;
+                // 2. 영어 대/소문자만 입력해야 할 때
+                var regExp2 = /^[a-z]+$/gi;
+                // 3. 영어 대/소문자와 숫자만 입력해야 할 때
+                var regExp3 = /^[a-z0-9]+$/gi;
+                // 4. 한글만 입력해야 할 때
+                var regExp4 = /^[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]+$/g;
+                // 5. 한글 또는 숫자만 입력해야 할 때
+                var regExp5 = /^[ㄱ-ㅎ|ㅏ-ㅣ|가-힣0-9]+$/g;
+                // 6. 영문자+숫자를 포함하는 값을 입력해야 할 때
+                var regExp6 = /^(?=.*[a-z])(?=.*[0-9]).+$/gi;
+                    // () : 그룹화
+                    // ?= : 결과에 포함하지 않고 기본 표현식 뒤에
+                        // 그룹과 일치(그룹의 패턴을 차례대로 일치하는지 검사)
+                    // . : 줄바꿈을 제외한 모든 문자
+                    // * : 0개 이상의 이전 토큰과 일치
+                // 7. 알파벳으로 최소 3글자, 최대 5글자만 입력해야 할 때
+                var regExp7 = /^[a-z]{3,5}$/gi;
+                // 8. 알파벳+숫자 포함하여 3글자~5글자만 입력해야 할 때
+                var regExp8 = /^(?=.*[a-z])(?=.*[0-9]).{3,5}$/gi;
+                // 9. 알파벳+숫자+특수기호 하나 이상 포함해야 할 때
+                var regExp9 = /^(?=.*[a-z])(?=.*[0-9])(?=.*\W).+$/gi;
+                
+                area1.innerHTML += "입력 데이터 : "+str+"<br>";
+                if(select == 1){
+                    area1.innerHTML += "정규 표현식 : "+regExp1+"<br>";
+                    if(regExp1.test(str)){
+                        area1.innerHTML += "성공<br>";
+                    }else {
+                        area1.innerHTML += "정규표현식에 어긋납니다.<br>";
+                    }
+                }else if(select == 2){
+                    area1.innerHTML += "정규 표현식 : "+regExp2+"<br>";
+                    if(regExp2.test(str)){
+                        area1.innerHTML += "성공<br>";
+                    }else {
+                        area1.innerHTML += "정규표현식에 어긋납니다.<br>";
+                    }
+                }else if(select == 3){
+                    area1.innerHTML += "정규 표현식 : "+regExp3+"<br>";
+                    if(regExp3.test(str)){
+                        area1.innerHTML += "성공<br>";
+                    }else {
+                        area1.innerHTML += "정규표현식에 어긋납니다.<br>";
+                    }
+                }else if(select == 4){
+                    area1.innerHTML += "정규 표현식 : "+regExp4+"<br>";
+                    if(regExp4.test(str)){
+                        area1.innerHTML += "성공<br>";
+                    }else {
+                        area1.innerHTML += "정규표현식에 어긋납니다.<br>";
+                    }
+                }else if(select == 5){
+                    area1.innerHTML += "정규 표현식 : "+regExp5+"<br>";
+                    if(regExp5.test(str)){
+                        area1.innerHTML += "성공<br>";
+                    }else {1
+                        area1.innerHTML += "정규표현식에 어긋납니다.<br>";
+                    }
+                }else if(select == 6){
+                    area1.innerHTML += "정규 표현식 : "+regExp6+"<br>";
+                    if(regExp6.test(str)){
+                        area1.innerHTML += "성공<br>";
+                    }else {
+                        area1.innerHTML += "정규표현식에 어긋납니다.<br>";
+                    }
+                }else if(select == 7){
+                    area1.innerHTML += "정규 표현식 : "+regExp7+"<br>";
+                    if(regExp7.test(str)){
+                        area1.innerHTML += "성공<br>";
+                    }else {
+                        area1.innerHTML += "정규표현식에 어긋납니다.<br>";
+                    }
+                }else if(select == 8){
+                    area1.innerHTML += "정규 표현식 : "+regExp8+"<br>";
+                    if(regExp8.test(str)){
+                        area1.innerHTML += "성공<br>";
+                    }else {
+                        area1.innerHTML += "정규표현식에 어긋납니다.<br>";
+                    }
+                }else if(select == 9){
+                    area1.innerHTML += "정규 표현식 : "+regExp9+"<br>";
+                    if(regExp9.test(str)){
+                        area1.innerHTML += "성공<br>";
+                    }else {
+                        area1.innerHTML += "정규표현식에 어긋납니다.<br>";
+                    }
+                }else{
+                    area1.innerHTML += "숫자를 선택해주세요.";
+                    return;
+                }
+                
+                
+                
+            }
+        </script>
+    </body>
+</html>

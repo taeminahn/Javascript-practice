@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>이벤트</title>
+        <style>
+            .area-big {
+                height: 400px;
+                background-color: lightgray;
+                border: 1px solid black;
+            }
+            .area {
+                height: 150px;
+                background-color: lightgray;
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>이벤트</h1>
+        <hr>
+        <h3>표준 이벤트 모델</h3>
+        <button>red</button>
+        <button>orange</button>
+        <button>blue</button>
+        <div id="area6" class="area"></div>
+        <script>
+            window.onload = function(){
+                var btn = document.getElementsByTagName('button');
+                for(i=0; i<btn.length; i++){
+                    btn[i].addEventListener('click', function(){
+                    area6 = document.getElementById('area6');
+                    area6.style.backgroundColor = this.innerText;
+                    })
+                }
+            }
+        </script>
+    </body>
+</html>
